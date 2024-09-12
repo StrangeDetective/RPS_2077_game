@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS 2077</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        
+
+
+    <div class="score-container">
+        <div class="human-score">
+            <h2>Player</h2>
+            <p id="humanScoreDisplay">0</p>
+        </div>
+        <div class="robot-score">
+            <h2>Robot</h2>
+            <p id="robotScoreDisplay">0</p>
+        </div>
+    </div>
+
+    <div class="textResult" id="resultDisplay">Choose your first option!</div>
+    
+    <div class="arm-container">
+        <div class="human-arm">
+            <img id="humanArmDisplay">
+        </div>
+        <div class="robot-arm">
+            <img id="robotArmDisplay">
+        </div>
+    </div>
+
+    <div class="choices">
+            <button onclick="playGame('H_ARM_ROCK.png')"><img id="option" src="H_ARM_ROCK.png"></button>
+            <button onclick="playGame('H_ARM_PAPER.png')"><img id="option" src="H_ARM_PAPER.png"></button>
+            <button onclick="playGame('H_ARM_SCISSORS.png')"><img id="option" src="H_ARM_SCISSORS.png"></button>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
