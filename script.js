@@ -5,8 +5,11 @@ const robotScoreDisplay = document.getElementById("robotScoreDisplay");
 let humanScore = 0;
 let robotScore = 0;
 
+
+
 // Function to simulate the robot's choice
 function computerSelection() {
+
     let random = Math.random();
     let choice;
     if (random < 0.33) {
@@ -20,8 +23,25 @@ function computerSelection() {
     return choice; // Return robot's choice
 };
 
+const startGame = () => {
+    const playBtn = document.querySelector(".intro button");
+    const introScreen = document.querySelector(".intro");
+    const match = document.querySelector(".match");
+
+    playBtn.addEventListener("click", () => {
+      introScreen.classList.add("fadeOut");
+      match.classList.add("fadeIn");
+    });
+  };
+startGame();
+
+
+while (humanScore < 5 && robotScore < 5){
+    playGame(playerChoice)
+}
 
 function playGame(playerChoice) {
+
     const computerChoice = computerSelection(); // Get robot's choice
     humanArmDisplay.setAttribute('src', playerChoice);
     let result="";
@@ -44,33 +64,41 @@ function playGame(playerChoice) {
     switch(result){
         case 'Winner!':
             humanScore = humanScore + 1;
+                if(humanScore === 5){
+                    result = "YOU WON!"}
             humanScoreDisplay.textContent = humanScore;
             break;
+
         case 'Looser!':
             robotScore = robotScore + 1;
+            if(robotScore === 5){
+                result = "game over!"}
             robotScoreDisplay.textContent = robotScore;
             break;
         }
 
+        switch(humanScore){
+            case 5:
+                result = "YOU WON!";
+                resultDisplay.textContent = result;
+                break;}
+        
+
+
+        if (humanScore === 5) {
+            alert("YOU WON! The secrets are now yours.");
+            resetGame();
+            } else if (robotScore === 5) {
+                    alert("You lost, access denied.");
+                    resetGame();
+            }
 }
+function resetGame() {
+    humanScore = 0;
+    robotScore = 0;
 
-
-/* 
-
-if (playerChoice === computerChoice){
-    result='Draw'}
-else if (playerChoice == 'Rock' && computerChoice == 'Paper'){
-        result='Earned a point, player!'}
-else if (playerChoice == 'Rock' && computerChoice == 'Scissors'){
-        result='Earned a point, player!'}
-else if (playerChoice == 'Paper' && computerChoice == 'Rock'){
-        result='lost a point, player!'}
-
-else if (playerChoice == 'Paper' && computerChoice == 'Scissors'){
-        result='lost a point, player!'}
-
-else if (playerChoice == 'Scissors' && computerChoice == 'Rock'){
-        result='lost a point, player!'}
-
-else if (playerChoice == 'Scissors' && computerChoice == 'Paper'){
-        result='Earned a point, player!'} */
+    humanScoreDisplay.textContent = humanScore;
+    robotScoreDisplay.textContent = robotScore;
+    
+    resultDisplay.textContent = "Choose your first option!";
+}

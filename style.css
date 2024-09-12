@@ -26,11 +26,56 @@ body {
     font-size: 25px;
 }
 
+.intro {
+    color: white;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: opacity 0.5s ease;
+    padding: 20px;
+  }
+  
+  .intro h3 {
+    font-size: 20px;
+    color: white;
+  }
+  .intro button{
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    background: rgb(135, 221, 255);
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .match {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease 0.5s;
+  }
+  
+div.fadeOut {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  div.fadeIn {
+    opacity: 1;
+    pointer-events: all;
+  }
 
 .arm-container {
     display: flex;
     flex-direction: row;
-    border: 1px solid rgb(229, 255, 0);
+    border: 1px solid rgb(183, 244, 255);
     justify-content: space-between;
 }
 
@@ -81,3 +126,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+
+
+

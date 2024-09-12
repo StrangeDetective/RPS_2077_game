@@ -7,39 +7,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-        
-
-
-    <div class="score-container">
-        <div class="human-score">
-            <h2>Player</h2>
-            <p id="humanScoreDisplay">0</p>
-        </div>
-        <div class="robot-score">
-            <h2>Robot</h2>
-            <p id="robotScoreDisplay">0</p>
-        </div>
-    </div>
-
-    <div class="textResult" id="resultDisplay">Choose your first option!</div>
     
-    <div class="arm-container">
-        <div class="human-arm">
-            <img id="humanArmDisplay">
+
+    <div class="intro">
+        <h3>You’ve hacked into hundreds of systems, outsmarted firewalls, and outpaced any security AI thrown your way. But now, as you breach the final defenses of Cycorp—the most powerful tech corporation in the city—something’s different. Just before you reach the data you need, a final gate blocks your way. A cold, robotic voice echoes in your neural implant:        </h3>
+
+        <h3>"To proceed, you must play a game of chance. Rock. Paper. Scissors. First to five."        </h3>
+            
+        <h3>It’s an old-world relic, a game forgotten in the age of cybernetics and AI. But this isn’t just about luck. It’s you against the machine, first to five. Fail, and the system locks you out permanently, your mission—ruined. Succeed, and you’ll hold the key to bringing down an empire.</h3>
+            
+        <h3>Your hands hover over the keys. Do you accept the challenge?</h3>
+        <button>Let's Play</button>
+      </div>
+
+    
+    
+    <div class="match fadeOut">
+
+        <div class="score-container">
+            <div class="human-score">
+                <h2>Player</h2>
+                <p id="humanScoreDisplay">0</p>
+            </div>
+            <div class="robot-score">
+                <h2>Robot</h2>
+                <p id="robotScoreDisplay">0</p>
+            </div>
         </div>
-        <div class="robot-arm">
-            <img id="robotArmDisplay">
+
+        <div class="textResult" id="resultDisplay">Choose your first option!</div>
+        <div class="arm-container">
+            <div class="human-arm">
+                <img id="humanArmDisplay">
+            </div>
+            <div class="robot-arm">
+                <img id="robotArmDisplay">
+            </div>
+        </div>
+
+        <div class="choices">
+                <button onclick="playGame('H_ARM_ROCK.png')"><img id="option" src="H_ARM_ROCK.png"></button>
+                <button onclick="playGame('H_ARM_PAPER.png')"><img id="option" src="H_ARM_PAPER.png"></button>
+                <button onclick="playGame('H_ARM_SCISSORS.png')"><img id="option" src="H_ARM_SCISSORS.png"></button>
         </div>
     </div>
 
-    <div class="choices">
-            <button onclick="playGame('H_ARM_ROCK.png')"><img id="option" src="H_ARM_ROCK.png"></button>
-            <button onclick="playGame('H_ARM_PAPER.png')"><img id="option" src="H_ARM_PAPER.png"></button>
-            <button onclick="playGame('H_ARM_SCISSORS.png')"><img id="option" src="H_ARM_SCISSORS.png"></button>
-    </div>
-
-
+    
     <script src="script.js"></script>
 </body>
 </html>
