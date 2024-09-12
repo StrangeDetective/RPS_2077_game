@@ -1,5 +1,5 @@
 body {
-    background-image: url("BG3.jpg");
+    background-image: url("BG5.jpg");
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
@@ -14,7 +14,6 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid rgb(0, 255, 106);
     color: white;
 }
 
@@ -28,7 +27,7 @@ body {
 
 .intro {
     color: white;
-    height: 70vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,16 +74,7 @@ div.fadeOut {
 .arm-container {
     display: flex;
     flex-direction: row;
-    border: 1px solid rgb(183, 244, 255);
     justify-content: space-between;
-}
-
-#human-arm {
-    border: 1px solid rgb(229, 255, 0);
-}
-
-#robot-arm {
-    border: 1px solid rgb(229, 255, 0);
 }
 
 .human-arm img {
@@ -101,7 +91,6 @@ div.fadeOut {
     justify-content: space-around;
     height: 140px;
     align-items: center;
-    border: 1px solid brown;
 }
 
 #option {
@@ -120,13 +109,50 @@ div.fadeOut {
 
 .textResult {
     height: 50px;
-    font-size: 20px;
+    font-size: 40px;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
+.modal-content {
+    border-radius: 10px;
+    background-color: #b0ffff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 5px solid #001b1d00;
+    width: 80%; /* Could be more or less, depending on screen size */
+    text-align: center;
+}
 
+.close {
+    color: #00161b;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalText {
+    font-size: 25px;
+    font-weight: bold;
+}

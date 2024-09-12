@@ -5,6 +5,18 @@ const robotScoreDisplay = document.getElementById("robotScoreDisplay");
 let humanScore = 0;
 let robotScore = 0;
 
+const resultModal = document.getElementById('resultModal');
+const modalText = document.getElementById('modalText');
+const closeModal = document.getElementsByClassName('close')[0];
+
+function showModal(message) {
+    modalText.textContent = message;
+    resultModal.style.display = 'block';
+}
+
+closeModal.onclick = function() {
+    resultModal.style.display = 'none';
+}
 
 
 // Function to simulate the robot's choice
@@ -61,37 +73,29 @@ function playGame(playerChoice) {
     else {result='Looser!';}
     resultDisplay.textContent = result;
 
-    switch(result){
+    switch (result) {
         case 'Winner!':
-            humanScore = humanScore + 1;
-                if(humanScore === 5){
-                    result = "YOU WON!"}
+            humanScore++;
+            if (humanScore === 5) {
+                result = "YOU WON! The secrets of the vault are yours.";
+                showModal(result);
+            }
             humanScoreDisplay.textContent = humanScore;
             break;
 
         case 'Looser!':
-            robotScore = robotScore + 1;
-            if(robotScore === 5){
-                result = "game over!"}
+            robotScore++;
+            if (robotScore === 5) {
+                result = "GAME OVER! Acces denied.";
+                showModal(result);
+            }
             robotScoreDisplay.textContent = robotScore;
             break;
-        }
-
-        switch(humanScore){
-            case 5:
-                result = "YOU WON!";
-                resultDisplay.textContent = result;
-                break;}
-        
-
-
-        if (humanScore === 5) {
-            alert("YOU WON! The secrets are now yours.");
-            resetGame();
-            } else if (robotScore === 5) {
-                    alert("You lost, access denied.");
-                    resetGame();
-            }
+    }
+    
+    if (humanScore === 5 || robotScore === 5) {
+        resetGame();
+    }
 }
 function resetGame() {
     humanScore = 0;
